@@ -13,9 +13,9 @@ const transporter = nodemailer.createTransport({
   export default async function verifyEmailSend({name, email, otp}: {name: string, email: string, otp: string}) {
     const info = await transporter.sendMail({
       from: '"Avinash Kumar Singh 👻" <noreply@gmail.com>', // sender address
-      to: `${name}, <${email}>`, // list of receivers
+      to: email, // list of receivers
       subject: "Verify your email", // Subject line
-      html: verifyEmailHtml.replace('12345',otp), // html body
+      html: verifyEmailHtml.replace('12345',otp).replace(`{userName}`,name), // html body
     });
     }
   
