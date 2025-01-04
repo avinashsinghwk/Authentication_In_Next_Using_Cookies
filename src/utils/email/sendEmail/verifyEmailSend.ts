@@ -2,12 +2,12 @@ import nodemailer from 'nodemailer'
 import { verifyEmailHtml } from '../emailTemplate/verifyEmailHtml.config';
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    auth: {
-        user: 'dylan.koelpin30@ethereal.email',
-        pass: 'zyTHeateH93gpkhVwy'
-    }
+  host: 'smtp.ethereal.email',
+  port: 587,
+  auth: {
+      user: 'sammie.baumbach50@ethereal.email',
+      pass: 'Ju5eheWVDfhQue91sr'
+  }
   });
 
   export default async function verifyEmailSend({name, email, otp}: {name: string, email: string, otp: string}) {
