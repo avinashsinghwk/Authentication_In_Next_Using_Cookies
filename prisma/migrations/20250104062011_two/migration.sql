@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "user" ALTER COLUMN "verifyOtp" SET DATA TYPE TEXT,
+ALTER COLUMN "forgotPasswordOtp" SET DATA TYPE TEXT;
