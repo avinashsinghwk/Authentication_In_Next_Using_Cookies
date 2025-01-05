@@ -40,7 +40,8 @@ export async function POST(req: NextRequest) {
         if (!isUser.isVerified) {
             return NextResponse.json({
                 success: false,
-                message: 'Verify your email first'
+                message: 'Verify your email first',
+                id: isUser.id
             }, { status: 411 })
         }
 

@@ -1,24 +1,21 @@
 import nodemailer from 'nodemailer'
+import { forgotPasswordEmailHtml } from '../emailTemplate/forgotPasswordEmailHtml.config';
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false, // true for port 465, false for other ports
-    auth: {
-      user: "maddison53@ethereal.email",
-      pass: "jn7jnAPss4f63QBp6D",
-    },
+  host: 'smtp.ethereal.email',
+  port: 587,
+  auth: {
+      user: 'lamont.welch4@ethereal.email',
+      pass: 'uthCEQt9HEQrvQjRuw'
+  }
   });
 
-  export default async function forgotPasswordEmailSend() {
+  export default async function forgotPasswordEmailSend({name, email, otp}: {name: string, email: string, otp: string}) {
     const info = await transporter.sendMail({
-      from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>', // sender address
-      to: "bar@example.com, baz@example.com", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello world?</b>", // html body
+      from: '"Avinash Kumar Singh 👻" <noreply@gmail.com>', // sender address
+      to: email, // list of receivers
+      subject: "Reset your password", // Subject line
+      html: forgotPasswordEmailHtml.replace('12345',otp).replace(`{userName}`,name), // html body
     });
-  
-    console.log("Message sent: %s", info.messageId);
-  }
+    }
   

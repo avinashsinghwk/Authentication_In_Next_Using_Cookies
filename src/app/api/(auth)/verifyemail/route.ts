@@ -23,6 +23,13 @@ export async function POST(req: NextRequest) {
             }, { status: 403 })
         }
 
+        if (isUser.isVerified) {
+            return NextResponse.json({
+                success: false,
+                message: 'This user is already verified'
+            }, { status: 403 })
+        }
+
         if (!isUser.verifyOtp || !isUser.verifyOtpExpiresAt) {
             return NextResponse.json({
                 success: false,
