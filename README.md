@@ -22,9 +22,9 @@ This is a Next.js application that demonstrates the use of cookies for authentic
 - PostgreSQL
 - Prisma
 
-### Installation
+### Contribution
 
-1. Clone the repository:
+#### Clone the repo and intall dependencies
 
 ```bash
 git clone https://github.com/avinashsinghwk/Authentication_In_Next_Using_Cookies.git
@@ -35,3 +35,18 @@ cd Authentication_In_Next_Using_Cookies
 ```bash
 yarn install
 ```
+#### Make a file .env in the root and copy everything from .env.sample
+
+#### Get your own database url and paste it in DATABASE_URL in .env
+
+```bash
+npx prisma migrate dev
+```
+#### Now go to `https://ethereal.email` website and create account and get uername and password
+#### Paste it in `/src/utils/email/sendEmail/forgotPasswordEmailSend.ts` and `/src/utils/email/sendEmail/verifyEmailSend.ts` files
+
+```bash
+yarn dev
+```
+
+#### Thank you!! 😊💖
